@@ -2,20 +2,21 @@ package main
 
 import (
 	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
 	"image/color"
 	"log"
 	"sync"
 )
 
 const (
-	screenWidth, screenHeight = 640, 360
+	screenWidth, screenHeight = 1024, 768
 	boidCount                 = 500
 	viewRadius                = 13
 	adjRate                   = 0.015
 )
 
 var (
-	green   = color.RGBA{10, 255, 50, 255}
+	green   = color.RGBA{R: 10, G: 255, B: 50, A: 255}
 	boids   [boidCount]*Boid
 	boidMap [screenWidth + 1][screenHeight + 1]int
 	rWlock  = sync.RWMutex{}
@@ -28,6 +29,7 @@ func (g *Game) Update() error {
 }
 
 func (g *Game) Draw(screen *ebiten.Image) {
+	ebitenutil.DebugPrint(screen, "Hello, World!")
 	for _, boid := range boids {
 		screen.Set(int(boid.position.x+1), int(boid.position.y), green)
 		screen.Set(int(boid.position.x-1), int(boid.position.y), green)
@@ -50,7 +52,7 @@ func main() {
 	for i := 0; i < boidCount; i++ {
 		createBoid(i)
 	}
-	ebiten.SetWindowSize(screenWidth*2, screenHeight*2)
+	ebiten.SetWindowSize(screenWidth, screenHeight)
 	ebiten.SetWindowTitle("Boids in a box")
 	if err := ebiten.RunGame(&Game{}); err != nil {
 		log.Fatal(err)
