@@ -1,7 +1,7 @@
 package arbitrator
 
 import (
-	. "github.com/cutajarj/multithreadingingo/deadlocks_train/common"
+	. "github.com/lao-tseu-is-alive/multithreadingingo/deadlocks_train/common"
 	"sync"
 	"time"
 )

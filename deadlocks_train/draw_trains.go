@@ -1,8 +1,8 @@
 package main
 
 import (
-	. "github.com/cutajarj/multithreadingingo/deadlocks_train/common"
 	"github.com/hajimehoshi/ebiten/v2"
+	. "github.com/lao-tseu-is-alive/multithreadingingo/deadlocks_train/common"
 	"image/color"
 	"math"
 )

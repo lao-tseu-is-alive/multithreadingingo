@@ -1,4 +1,4 @@
-module github.com/cutajarj/multithreadingingo
+module github.com/lao-tseu-is-alive/multithreadingingo
 
 go 1.14
 
