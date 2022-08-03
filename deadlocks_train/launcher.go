@@ -33,6 +33,7 @@ func (g *Game) Layout(_, _ int) (w, h int) {
 	return 320, 320
 }
 
+// to check it just go in this directory and run :  go run *.go
 func main() {
 	for i := 0; i < 4; i++ {
 		trains[i] = &Train{Id: i, TrainLength: trainLength, Front: 0}
