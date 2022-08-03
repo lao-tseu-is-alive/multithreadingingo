@@ -24,7 +24,9 @@ func countLetters(url string, frequency *[26]int32, wg *sync.WaitGroup) {
 			//lock.Lock()
 			index := strings.Index(allLetters, c)
 			if index >= 0 {
-				//*frequency[c] += 1
+				//*frequency[c] += 1  // ~25sec
+				// by using atomic variables we reduce time execution to ~ 3sec (instead of 25)
+				// atomic variables are a quick win for this kind of problems
 				atomic.AddInt32(&frequency[index], 1)
 			}
 			//lock.Unlock()
