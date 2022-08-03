@@ -12,3 +12,4 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+/deadlocks_simple/red_blue

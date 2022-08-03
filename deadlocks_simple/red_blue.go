@@ -37,6 +37,11 @@ func redRobot() {
 	}
 }
 
+// https://yourbasic.org/golang/detect-deadlock/
+// CONCLUSION DO NOT USE SAME LOCK ON MANY GOROUTINES WITHOUT ANOTHER WAY TO COORDINATE ACCESS  BETWEEN GO ROUTINES !!!
+// https://go.dev/doc/articles/race_detector does not detect deadlock
+// maybe you can try using  https://github.com/sasha-s/go-deadlock
+// introduce a resource hierarchy : check deadlocks_train example
 func main() {
 	go redRobot()
 	go blueRobot()
