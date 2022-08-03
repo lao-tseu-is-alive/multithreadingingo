@@ -3,7 +3,9 @@ package main
 import (
 	"github.com/hajimehoshi/ebiten/v2"
 	. "github.com/lao-tseu-is-alive/multithreadingingo/deadlocks_train/common"
+	// comment next line and uncomment the arbitrator one to check a working implementation of this algorithm
 	. "github.com/lao-tseu-is-alive/multithreadingingo/deadlocks_train/deadlock"
+	// . "github.com/lao-tseu-is-alive/multithreadingingo/deadlocks_train/arbitrator"
 	"log"
 	"sync"
 )
